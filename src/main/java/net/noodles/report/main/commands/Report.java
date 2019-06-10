@@ -1,5 +1,6 @@
-package net.noodles.report.main;
+package net.noodles.report.main.commands;
 
+import net.noodles.report.main.Main;
 import net.noodles.report.main.inv.InvCreator;
 import net.noodles.report.main.inv.InvNames;
 import net.noodles.report.main.inv.Items;
@@ -49,7 +50,6 @@ public class Report implements Listener, CommandExecutor {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.plugin.getConfig().getString("OfflinePlayer")));
 			return true;
 		}
-
 		InvCreator.Main.setItem(Main.plugin.getGUIItemsConfig().getInt("HackingReportItemLocation"), Items.Hacking(p));
 		InvCreator.Main.setItem(Main.plugin.getGUIItemsConfig().getInt("ChatReportItemLocation"), Items.ChatOffences(p));
 		InvCreator.Main.setItem(Main.plugin.getGUIItemsConfig().getInt("BugExploitingReportItemLocation"), Items.BugExploiting(p));
@@ -85,7 +85,6 @@ public class Report implements Listener, CommandExecutor {
 						globalp.sendMessage("");
 						globalp.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.plugin.getConfig().getString("HackReceive").replace("%player%", bannedPlayer.getName()).replace("%reporting%", p.getName())));
 						globalp.sendMessage("");
-
 					}
 				}
 				if (e.getCurrentItem().equals(Items.ChatOffences(p))) {
@@ -128,9 +127,6 @@ public class Report implements Listener, CommandExecutor {
 						globalp.sendMessage("");
 					}
 				}
-
-
-
 
 			}
 		}

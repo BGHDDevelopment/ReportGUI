@@ -1,6 +1,10 @@
 package net.noodles.report.main;
 
+import net.noodles.report.main.commands.Report;
 import net.noodles.report.main.updatechecker.UpdateChecker;
+import net.noodles.report.main.util.Logger;
+import net.noodles.report.main.util.MetricsLite;
+import net.noodles.report.main.util.Settings;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

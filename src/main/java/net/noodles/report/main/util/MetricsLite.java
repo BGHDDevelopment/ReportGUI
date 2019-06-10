@@ -1,4 +1,4 @@
-package net.noodles.report.main;
+package net.noodles.report.main.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
