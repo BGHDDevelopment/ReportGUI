@@ -1,0 +1,7 @@
+name: ReportGUI
+version: ${project.version}
+main: net.noodles.report.main.Main
+author: BGHDDevelopment
+commands:
+  report:
+    description: Report a player.

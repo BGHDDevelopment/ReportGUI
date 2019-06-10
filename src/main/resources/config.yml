@@ -1,0 +1,36 @@
+#Created by BGHDDevelopment(Noodles)
+#Discord/Support: https://bghddevelopment.com/discord
+#Plugin Link: https://www.spigotmc.org/resources/
+#Website: https://bghddevelopment.com
+#=======================================================
+#Permssion: report.update
+Update:
+  Enabled: true
+#Enables if there is a message on-join when the plugin is outdated.
+#=======================================================
+#Main Messages
+NoConsole: "You can only use this command as a player!"
+InvalidUsage: "&cUse like: /report <player>"
+NoPermission: "&cYou do not have permission to use this command!"
+OfflinePlayer: "&cThat player is not online!"
+SentMessage: "&4Your report has been sent to all online staff!"
+#-----------------------------------------------------------------------------
+#Report Messages:
+#Hacking Offence
+HackReport: "&cReported %player% for hacking!"
+HackReceive: "&b%reporting% reported %player% for hacking!"
+#Chat Offence
+ChatReport: "&cReported %player% for chat offences!"
+ChatReceive: "&b%reporting% reported %player% for chat offences!"
+#Bug Exploiting
+BugExploitingReport: "&cReported %player% for bug exploiting!"
+BugExploitingReceive: "&b%reporting% reported %player% for bug exploiting!"
+#Team Trolling
+TeamTrollingReport: "&cReported %player% for team trolling!"
+TeamTrollingReceive: "&b%reporting% reported %player% for team trolling!"
+#Threats
+ThreatReport: "&cReported %player% for threats!"
+ThreatReceive: "&b%reporting% reported %player% for threats!"
+
+
+

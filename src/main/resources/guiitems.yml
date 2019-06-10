@@ -1,0 +1,39 @@
+#In this file you can change all lore, names and items for the GUI.
+#Please use this list for the item names: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Material.html
+#Note: This list is for 1.8. Please research the items for your MC version.
+#=========================================================================================================
+#Items:
+#HackingReportItem
+HackingReportItem: "IRON_SWORD"
+HackingReportItemLocation: 0
+HackingReportItemName: "Hacking"
+HackingReportItemLore:
+  - '&cReport the player for hacking!'
+
+#ChatReportItem
+ChatReportItem: "PAPER"
+ChatReportItemLocation: 1
+ChatReportItemName: "Chat Offences"
+ChatReportItemLore:
+  - '&cReport the player for chat offences!'
+
+#BugExploitingReportItem
+BugExploitingReportItem: "ANVIL"
+BugExploitingReportItemLocation: 2
+BugExploitingReportItemName: "Bug Exploiting"
+BugExploitingReportItemLore:
+  - '&cReport the player for bug exploiting!'
+
+#TeamTrollingItem
+TeamTrollingReportItem: "REDSTONE_BLOCK"
+TeamTrollingReportItemLocation: 3
+TeamTrollingReportItemName: "Team Trolling"
+TeamTrollingReportItemLore:
+  - '&cReport the player for team trolling!'
+
+#ThreatTrollingItem
+ThreatReportItem: "TNT"
+ThreatReportItemLocation: 4
+ThreatReportItemName: "Threats"
+ThreatReportItemLore:
+  - '&cReport the player for threats!'
