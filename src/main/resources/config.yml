@@ -1,6 +1,6 @@
 #Created by BGHDDevelopment(Noodles)
 #Discord/Support: https://bghddevelopment.com/discord
-#Plugin Link: https://www.spigotmc.org/resources/
+#Plugin Link: https://www.spigotmc.org/resources/68177
 #Website: https://bghddevelopment.com
 #=======================================================
 #Permssion: report.update
@@ -31,6 +31,3 @@ TeamTrollingReceive: "&b%reporting% reported %player% for team trolling!"
 #Threats
 ThreatReport: "&cReported %player% for threats!"
 ThreatReceive: "&b%reporting% reported %player% for threats!"
-
-
-
