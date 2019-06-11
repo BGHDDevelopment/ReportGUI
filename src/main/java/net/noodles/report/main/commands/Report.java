@@ -6,6 +6,7 @@ import net.noodles.report.main.inv.InvNames;
 import net.noodles.report.main.inv.Items;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,7 +17,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class Report implements Listener, CommandExecutor {
 
-	public static Player bannedPlayer;
+	public static OfflinePlayer bannedPlayer;
 
 	public Report() {
 		this.bannedPlayer = null;
@@ -36,7 +37,8 @@ public class Report implements Listener, CommandExecutor {
 			return true;
 		}
 		if (args.length == 1) {
-			bannedPlayer = Bukkit.getPlayer(args[0]);
+			//bannedPlayer = Bukkit.getPlayer(args[0]);
+			bannedPlayer = Bukkit.getOfflinePlayer(args[0]);
 		}
 		if (!sender.hasPermission("report.use")) {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.plugin.getConfig().getString("NoPermission")));
