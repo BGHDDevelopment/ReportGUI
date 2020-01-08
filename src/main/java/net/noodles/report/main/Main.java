@@ -8,6 +8,7 @@ import net.noodles.report.main.util.Settings;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,7 @@ public final class Main extends JavaPlugin {
 
     public static Main plugin;
     private UpdateChecker checker;
+    private static Plugin instance;
 
 
     @Override
@@ -33,6 +35,7 @@ public final class Main extends JavaPlugin {
         Logger.log(Logger.LogLevel.INFO, "Plugin Loading...");
         Logger.log(Logger.LogLevel.INFO, "Registering Managers...");
         plugin = this;
+        instance = this;
         MetricsLite metrics = new MetricsLite(this);
         Logger.log(Logger.LogLevel.INFO, "Managers Registered!");
         Logger.log(Logger.LogLevel.INFO, "Registering Listeners...");
@@ -48,20 +51,17 @@ public final class Main extends JavaPlugin {
         this.setEnabled(true);
         Logger.log(Logger.LogLevel.OUTLINE,  "********************");
         Logger.log(Logger.LogLevel.INFO, "Checking for updates...");
-        this.checker = new UpdateChecker(this);
-        if (this.checker.isConnected()) {
-            if (this.checker.hasUpdate()) {
-                Logger.log(Logger.LogLevel.OUTLINE,  "********************");
+        new UpdateChecker(this, 68177).getLatestVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                Logger.log(Logger.LogLevel.SUCCESS,("ReportGUI is up to date!"));
+            } else {
+                Logger.log(Logger.LogLevel.OUTLINE,  "*********************************************************************");
                 Logger.log(Logger.LogLevel.WARNING,("ReportGUI is outdated!"));
-                Logger.log(Logger.LogLevel.WARNING,("Newest version: " + this.checker.getLatestVersion()));
+                Logger.log(Logger.LogLevel.WARNING,("Newest version: " + version));
                 Logger.log(Logger.LogLevel.WARNING,("Your version: " + Settings.VERSION));
                 Logger.log(Logger.LogLevel.WARNING,("Please Update Here: " + Settings.PLUGIN_URL));
-                Logger.log(Logger.LogLevel.OUTLINE,  "********************");
-            }
-            else {
-                Logger.log(Logger.LogLevel.SUCCESS, "ReportGUI is up to date!");
-            }
-        }
+                Logger.log(Logger.LogLevel.OUTLINE,  "*********************************************************************");			}
+        });
     }
 
     @Override
@@ -78,6 +78,10 @@ public final class Main extends JavaPlugin {
 
     }
 
+    public static Main getPlugin() { return plugin; }
+    public static Plugin getInstance() {
+        return instance;
+    }
 
     private File configf, guiitemsf;
     private FileConfiguration config, guiitems;
